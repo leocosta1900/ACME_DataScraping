@@ -12,7 +12,7 @@
   <mva:VisualBasic.Settings>
     <x:Null />
   </mva:VisualBasic.Settings>
-  <sap:VirtualizedContainerService.HintSize>1068.66666666667,712.666666666667</sap:VirtualizedContainerService.HintSize>
+  <sap:VirtualizedContainerService.HintSize>922.666666666667,697.333333333333</sap:VirtualizedContainerService.HintSize>
   <sap2010:WorkflowViewState.IdRef>ActivityBuilder_1</sap2010:WorkflowViewState.IdRef>
   <TextExpression.NamespacesForImplementation>
     <scg:List x:TypeArguments="x:String" Capacity="52">
@@ -87,7 +87,7 @@
       <AssemblyReference>UiPath.Studio.Constants</AssemblyReference>
     </sco:Collection>
   </TextExpression.ReferencesForImplementation>
-  <Sequence sap:VirtualizedContainerService.HintSize="400,226" sap2010:WorkflowViewState.IdRef="Sequence_1">
+  <Sequence sap:VirtualizedContainerService.HintSize="400,266.666666666667" sap2010:WorkflowViewState.IdRef="Sequence_1">
     <Sequence.Variables>
       <Variable x:TypeArguments="scg:List(snm:MailMessage)" Name="Messages" />
     </Sequence.Variables>
@@ -96,15 +96,22 @@
         <x:Boolean x:Key="IsExpanded">True</x:Boolean>
       </scg:Dictionary>
     </sap:WorkflowViewStateService.ViewState>
-    <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}" DisplayName="Invoke Sequence workflow" sap:VirtualizedContainerService.HintSize="338,115.333333333333" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_1" UnSafe="False" WorkflowFileName="Sequence.xaml">
-      <ui:InvokeWorkflowFile.Arguments>
-        <InArgument x:TypeArguments="x:String" x:Key="inA">
-          <mva:VisualBasicValue x:TypeArguments="x:String" ExpressionText="inA" />
+    <ui:AddLogFields DisplayName="Add Log Fields" sap:VirtualizedContainerService.HintSize="338,25.3333333333333" sap2010:WorkflowViewState.IdRef="AddLogFields_1">
+      <ui:AddLogFields.Fields>
+        <InArgument x:TypeArguments="x:String" x:Key="pd">
+          <Literal x:TypeArguments="x:String">pd</Literal>
         </InArgument>
-        <InArgument x:TypeArguments="x:String" x:Key="inB">
-          <Literal x:TypeArguments="x:String">3234</Literal>
-        </InArgument>
-      </ui:InvokeWorkflowFile.Arguments>
-    </ui:InvokeWorkflowFile>
+      </ui:AddLogFields.Fields>
+    </ui:AddLogFields>
+    <ui:GetQueueItem ContinueOnError="{x:Null}" TimeoutMS="{x:Null}" TransactionItem="{x:Null}" DisplayName="Get Transaction Item" sap:VirtualizedContainerService.HintSize="338,25.3333333333333" sap2010:WorkflowViewState.IdRef="GetQueueItem_1" QueueType="Trigger Invocato 1" />
+    <ui:RemoveLogFields DisplayName="Remove Log Fields" sap:VirtualizedContainerService.HintSize="338,25.3333333333333" sap2010:WorkflowViewState.IdRef="RemoveLogFields_1">
+      <ui:RemoveLogFields.Fields>
+        <scg:List x:TypeArguments="InArgument(x:String)" Capacity="4">
+          <InArgument x:TypeArguments="x:String">
+            <Literal x:TypeArguments="x:String">pd</Literal>
+          </InArgument>
+        </scg:List>
+      </ui:RemoveLogFields.Fields>
+    </ui:RemoveLogFields>
   </Sequence>
 </Activity>
